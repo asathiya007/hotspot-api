@@ -1,4 +1,3 @@
-import torch
 import torchvision.models as models
 import torch.nn as nn 
 import torch.nn.functional as F
@@ -9,7 +8,7 @@ for param in model.parameters():
 
 classifier_input = model.classifier.in_features
 num_labels = 2
-class FireClassifier(torch.nn.Module):
+class FireClassifier(nn.Module):
     def __init__(self):
         super(FireClassifier, self).__init__()
         self.linear1 = nn.Linear(classifier_input, 1024)
