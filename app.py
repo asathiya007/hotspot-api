@@ -45,12 +45,18 @@ def predict(image, model):
 app = Flask(__name__)
 
 @app.route('/')
-def hello():
+def test():
     return 'API running!'
 
 @app.route('/classify', methods=['POST'])
 def classify():
-    image_url = request.get_json()["url"]
-    confidence, classification = predict(process_image(image_url), model)
-    classification = 'fire' if classification == 0 else 'no fire'
-    return jsonify({'confidence': confidence, 'classification': classification})
+    try:
+        image_url = request.get_json()["url"]
+        if image_url is None or len(image_url) == 0:
+            return jsonify({'error': {'msg': 'No image URL or empty image URL provided. Please provide a valid image URL.'}})
+        confidence, classification = predict(process_image(image_url), model)
+        classification = 'fire' if classification == 0 else 'no fire'
+        return jsonify({'confidence': confidence, 'classification': classification, 'error': None})
+    except:
+        return jsonify({'error': {'msg': 'Unable to classify image. Please make sure a valid image URL is provided.'}})
+    
