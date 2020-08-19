@@ -1,0 +1,5 @@
+data/
+fire_classifier.ipynb
+__pycache__/
+README.md
+.ipynb_checkpoints/
