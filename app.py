@@ -3,8 +3,9 @@ import torch
 import urllib.request
 from PIL import Image
 import numpy as np
+from fire_classifier import model
 
-model = torch.load('fire_classifier')
+model.classifier.load_state_dict(torch.load('fire_classifier'))
 model.eval()
 
 def process_image(image_path):
