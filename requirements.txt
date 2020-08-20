@@ -1,4 +1,5 @@
 flask
+flask_cors
 gunicorn
 numpy
 -f https://download.pytorch.org/whl/torch_stable.html

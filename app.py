@@ -1,4 +1,5 @@
 from flask import Flask, jsonify, request
+from flask_cors import CORS
 import numpy as np
 import torch
 import urllib.request
@@ -44,6 +45,7 @@ def predict(image, model):
     return probs.item(), classes.item()
 
 app = Flask(__name__)
+CORS(app)
 
 @app.route('/')
 def test():
