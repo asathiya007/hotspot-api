@@ -49,7 +49,7 @@ CORS(app)
 
 @app.route('/')
 def test():
-    return 'API running!'
+    return 'HotSpot API running!'
 
 @app.route('/classify', methods=['POST'])
 def classify():
@@ -62,4 +62,6 @@ def classify():
         return jsonify({'confidence': confidence, 'classification': classification, 'error': None})
     except:
         return jsonify({'error': {'msg': 'Unable to classify image. Please make sure a valid image URL is provided.'}})
-    
+
+if __name__ == "__main__":
+    app.run()
