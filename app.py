@@ -63,5 +63,3 @@ def classify():
     except:
         return jsonify({'error': {'msg': 'Unable to classify image. Please make sure a valid image URL is provided.'}})
 
-if __name__ == "__main__":
-    app.run()
