@@ -1,6 +1,6 @@
 ### HotSpot
 
-HotSpot is an artificial intelligence tool that uses computer vision to detect wildfires in aerial images captured by planes, drones, satellites, etc. This project was inspired by California's wildfire crisis in August 2020. 
+HotSpot is an artificial intelligence tool that uses computer vision to detect wildfires in aerial images captured by planes, drones, satellites, etc. This project was built in response to California's wildfire crisis in August 2020. 
 
 Wildfires are often noticed by humans after they have gotten too large and too close. By detecting these wildfires from the air before they get too large and reach humans, HotSpot enables authorities to take action early to contain and put out the wildfires, prevent and mitigate damage, and save countless lives.
 
